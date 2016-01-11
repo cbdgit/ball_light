@@ -22,7 +22,7 @@ public class FadeTabActivity extends FragmentActivity {
         fadeTabIndicator.setViewPager(viewPager);
     }
 
-    private class FadeTabFragmentPagerAdapter extends SampleFragmentPagerAdapter implements FadingTab {
+    private class FadeTabFragmentPagerAdapter extends BaseFragmentPagerAdapter implements FadingTab {
 
         public FadeTabFragmentPagerAdapter(Context context, FragmentManager fm) {
             super(context, fm);

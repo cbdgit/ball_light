@@ -24,7 +24,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kymjs.frame.view.IDelegate;
+import com.bosong.framework.view.IDelegate;
 
 public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {
     public T viewDelegate;
@@ -54,10 +54,10 @@ public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewDelegate.initWidget();
-        bindEvenListener();
+        bindEventListener();
     }
 
-    protected void bindEvenListener() {
+    protected void bindEventListener() {
     }
 
     @Override

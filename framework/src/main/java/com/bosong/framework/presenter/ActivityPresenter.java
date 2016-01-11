@@ -20,7 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-import com.kymjs.frame.view.IDelegate;
+import com.bosong.framework.view.IDelegate;
 
 public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatActivity {
     protected T viewDelegate;
@@ -42,10 +42,10 @@ public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatAc
         setContentView(viewDelegate.getRootView());
         initToolbar();
         viewDelegate.initWidget();
-        bindEvenListener();
+        bindEventListener();
     }
 
-    protected void bindEvenListener() {
+    protected void bindEventListener() {
     }
 
     protected void initToolbar() {
