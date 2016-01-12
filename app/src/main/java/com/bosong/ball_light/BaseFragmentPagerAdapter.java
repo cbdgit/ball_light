@@ -1,6 +1,9 @@
 package com.bosong.ball_light;
 
 import com.bosong.ball_light.presenter.AllDevidesFragment;
+import com.bosong.ball_light.presenter.ContextFragment;
+import com.bosong.ball_light.presenter.TimerFragment;
+import com.bosong.ball_light.presenter.MusicFragment;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -11,6 +14,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class BaseFragmentPagerAdapter extends FragmentPagerAdapter {
     
     private Context mContext;
+    private AllDevidesFragment allDevidesFragment = AllDevidesFragment.newInstance();
+    private ContextFragment contextFragment = new ContextFragment();
+    private TimerFragment timerFragment = new TimerFragment();
+    private MusicFragment musicFragment = new MusicFragment();
+
     public BaseFragmentPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         this.mContext = context;
@@ -21,22 +29,37 @@ public class BaseFragmentPagerAdapter extends FragmentPagerAdapter {
         //return SampleFragment.newInstance(CONTENT[position % CONTENT.length]);
         switch(position % 4){
             case 0:
-                return AllDevidesFragment.newInstance();
+                if(allDevidesFragment == null) {
+                    allDevidesFragment = AllDevidesFragment.newInstance();
+                }
+                return allDevidesFragment;
             case 1:
-                return AllDevidesFragment.newInstance();
+                if(contextFragment == null) {
+                    contextFragment = new ContextFragment();
+                }
+                return contextFragment;
             case 2:
-                return AllDevidesFragment.newInstance();
+                if(timerFragment == null) {
+                    timerFragment = new TimerFragment();
+                }
+                return timerFragment;
             case 3:
-                return AllDevidesFragment.newInstance();
+                if(musicFragment == null) {
+                    musicFragment = new MusicFragment();
+                }
+                return musicFragment;
             default:
-                return AllDevidesFragment.newInstance();
+                return null;
         }
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return new String[]{mContext.getString(R.string.tab1_text), mContext.getString(R.string.tab2_text),
-                mContext.getString(R.string.tab3_text), mContext.getString(R.string.tab4_text)}[position];
+        return new String[]{
+                mContext.getString(R.string.tab1_text),
+                mContext.getString(R.string.tab2_text),
+                mContext.getString(R.string.tab3_text),
+                mContext.getString(R.string.tab4_text)}[position];
     }
 
     @Override

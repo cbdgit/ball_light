@@ -26,7 +26,7 @@ public class AllDevidesFragment extends FragmentPresenter<AllDevidesDelegate> im
     @Override
     protected void bindEventListener(){
         super.bindEventListener();
-        viewDelegate.setOnClickListener(this, R.id.text_view);
+        //viewDelegate.setOnClickListener(this, R.id.text_view);
     }
 
     @Override

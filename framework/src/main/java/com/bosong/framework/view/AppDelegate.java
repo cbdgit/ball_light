@@ -58,7 +58,7 @@ public abstract class AppDelegate implements IDelegate {
     @Override
     public void initWidget() {
     }
-
+/*
     public <T extends View> T bindView(int id) {
         T view = (T) mViews.get(id);
         if (view == null) {
@@ -84,7 +84,7 @@ public abstract class AppDelegate implements IDelegate {
     public void toast(CharSequence msg) {
         Toast.makeText(rootView.getContext(), msg, Toast.LENGTH_SHORT).show();
     }
-
+*/
     public <T extends Activity> T getActivity() {
         return (T) rootView.getContext();
     }

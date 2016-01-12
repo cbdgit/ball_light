@@ -42,7 +42,7 @@ public class FadeTabIndicator extends LinearLayout {
     private void init() {
         setOrientation(LinearLayout.HORIZONTAL);
         setPadding(0, 8, 0, 8);
-        //setBackgroundResource(R.drawable.bg_tabs);
+        setBackgroundResource(R.drawable.bg_tabs);
         tabLayoutParams = new LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f);
         imageSize = (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, imageSize, getResources().getDisplayMetrics());
@@ -128,8 +128,8 @@ public class FadeTabIndicator extends LinearLayout {
                 mNormalImage.setAlpha(1 - alpha);
                 mSelectImage.setAlpha(alpha);
             } else {
-                mNormalImage.setAlpha((int) (1 - alpha));
-                mSelectImage.setAlpha((int) alpha);
+                mNormalImage.setAlpha(1 - alpha);
+                mSelectImage.setAlpha(alpha);
             }
         }
     }
@@ -149,8 +149,8 @@ public class FadeTabIndicator extends LinearLayout {
             mSelectTextView.setAlpha(0.0f);
             //mNormalTextView.setText(text);
             //mSelectTextView.setText(text);
-            mNormalTextView.setTextSize(textSize);
-            mSelectTextView.setTextSize(textSize);
+            //mNormalTextView.setTextSize(textSize);
+            //mSelectTextView.setTextSize(textSize);
             addView(mNormalTextView, 0, new LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, Gravity.CENTER));
             addView(mSelectTextView, 1, new LayoutParams(
@@ -184,7 +184,7 @@ public class FadeTabIndicator extends LinearLayout {
                 int textNormalColorResId, int textSelectColorResId) {
             super(context);
             LayoutParams ivLayoutParams =
-                    new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+                    new LayoutParams(LayoutParams.MATCH_PARENT, 120);
             fadingImageView = new FadingImageView(context, normalResId, selectResId);
             fadingImageView.setId(100);
             addView(fadingImageView, ivLayoutParams);
@@ -193,7 +193,7 @@ public class FadeTabIndicator extends LinearLayout {
                     new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
             tvLayoutParams.addRule(RelativeLayout.BELOW, 100);
             fadingTextView = new FadingTextView(context, text, textNormalColorResId, textSelectColorResId);
-            addView(fadingTextView, tvLayoutParams);
+            //addView(fadingTextView, tvLayoutParams);
         }
 
         public FadingImageView getFadingImageView() {

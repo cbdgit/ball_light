@@ -16,7 +16,7 @@ public class AllDevidesDelegate extends AppDelegate {
     @Override
     public void initWidget(){
         super.initWidget();
-        TextView textView = get(R.id.text_view);
-        textView.setText("只是测试");
+        //TextView textView = get(R.id.text_view);
+        //textView.setText("只是测试");
     }
 }
