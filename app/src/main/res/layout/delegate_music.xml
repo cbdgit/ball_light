@@ -102,4 +102,61 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/layout_seek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_controls"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/text_slow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:text="@string/slow"
+            />
+        <SeekBar
+            android:id="@+id/SeekBar"
+            android:layout_width="140px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3px"
+            android:layout_marginTop="5px"
+            />
+        <TextView
+            android:id="@+id/text_quik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3px"
+            android:textColor="#666666"
+            android:text="@string/quik"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_seek"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/button_color_slt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_slt"
+
+            />
+        <Button
+            android:id="@+id/button_music_lib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/music_lib"
+            />
+    </LinearLayout>
+
 </RelativeLayout>

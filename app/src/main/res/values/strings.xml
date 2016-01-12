@@ -13,4 +13,9 @@
     <string name="gentle">柔和</string>
     <string name="rock">摇滚</string>
 
+    <string name="slow">慢</string>
+    <string name="quik">快</string>
+
+    <string name="color_slt">色彩</string>
+    <string name="music_lib">乐库</string>
 </resources>
