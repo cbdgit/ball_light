@@ -44,12 +44,19 @@ public class MainActivity extends FragmentActivity implements
 	private void initTabIndicator() {
 		ChangeColorIconWithTextView one = (ChangeColorIconWithTextView) findViewById(R.id.id_indicator_one);
 		ChangeColorIconWithTextView two = (ChangeColorIconWithTextView) findViewById(R.id.id_indicator_two);
+		ChangeColorIconWithTextView thr = (ChangeColorIconWithTextView) findViewById(R.id.id_indicator_thr);
+		ChangeColorIconWithTextView four = (ChangeColorIconWithTextView) findViewById(R.id.id_indicator_four);
 
 		mTabIndicator.add(one);
 		mTabIndicator.add(two);
+		mTabIndicator.add(thr);
+		mTabIndicator.add(four);
 
 		one.setOnClickListener(this);
 		two.setOnClickListener(this);
+		thr.setOnClickListener(this);
+		four.setOnClickListener(this);
+
 
 		one.setIconAlpha(1.0f);
 	}
@@ -88,6 +95,14 @@ public class MainActivity extends FragmentActivity implements
 		case R.id.id_indicator_two:
 			mTabIndicator.get(1).setIconAlpha(1.0f);
 			mViewPager.setCurrentItem(1, false);
+			break;
+		case R.id.id_indicator_thr:
+			mTabIndicator.get(2).setIconAlpha(1.0f);
+			mViewPager.setCurrentItem(2, false);
+			break;
+		case R.id.id_indicator_four:
+			mTabIndicator.get(3).setIconAlpha(1.0f);
+			mViewPager.setCurrentItem(3, false);
 			break;
 		}
 
@@ -141,6 +156,16 @@ public class MainActivity extends FragmentActivity implements
 				}
 				return returnVisit;
 			case 1:
+				if (microVisit == null) {
+					microVisit = new FrgMicroVisit();
+				}
+				return microVisit;
+			case 2:
+				if (returnVisit == null) {
+					returnVisit = new FrgReturnVisit();
+				}
+				return returnVisit;
+			case 3:
 				if (microVisit == null) {
 					microVisit = new FrgMicroVisit();
 				}

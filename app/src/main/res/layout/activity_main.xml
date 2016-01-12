@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="100dp"
         android:background="@drawable/tabbg"
         android:orientation="horizontal" >
 
@@ -23,18 +23,40 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_start_conversation"
-            zhy:text_size="12sp" />
+            android:padding="10dp"
+            zhy:icon="@drawable/ic_1_1"
+            zhy:text_size="12sp"
+            />
 
         <com.bosong.ball_light.ChangeColorIconWithTextView
             android:id="@+id/id_indicator_two"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            zhy:icon="@drawable/ic_menu_friendslist"
-            zhy:text_size="12sp" />
+            android:padding="10dp"
+            zhy:icon="@drawable/ic_2_1"
+            zhy:text_size="12sp"
+            />
+        <com.bosong.ball_light.ChangeColorIconWithTextView
+            android:id="@+id/id_indicator_thr"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            zhy:icon="@drawable/ic_3_1"
+            zhy:text_size="12sp"
+            />
+
+        <com.bosong.ball_light.ChangeColorIconWithTextView
+            android:id="@+id/id_indicator_four"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            zhy:icon="@drawable/ic_4_1"
+            zhy:text_size="12sp"
+            />
+
     </LinearLayout>
 
 </LinearLayout>

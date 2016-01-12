@@ -26,7 +26,7 @@ public class ChangeColorIconWithTextView extends View {
 	/**
 	 * 颜色
 	 */
-	private int mColor = 0xFF45C01A;
+	private int mColor = 0xFF6F00D2;
 	/**
 	 * 透明度 0.0-1.0
 	 */
@@ -42,7 +42,7 @@ public class ChangeColorIconWithTextView extends View {
 	/**
 	 * icon底部文本
 	 */
-	private String mText = "demo";
+	//private String mText = "demo";
 	private int mTextSize = (int) TypedValue.applyDimension(
 			TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics());
 	private Paint mTextPaint;
@@ -77,25 +77,25 @@ public class ChangeColorIconWithTextView extends View {
 			case R.styleable.ChangeColorIconView_color:
 				mColor = a.getColor(attr, 0x45C01A);
 				break;
-			case R.styleable.ChangeColorIconView_text:
-				mText = a.getString(attr);
-				break;
-			case R.styleable.ChangeColorIconView_text_size:
-				mTextSize = (int) a.getDimension(attr, TypedValue
-						.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10,
-								getResources().getDisplayMetrics()));
-				break;
+			//case R.styleable.ChangeColorIconView_text:
+			//	mText = a.getString(attr);
+			//	break;
+			//case R.styleable.ChangeColorIconView_text_size:
+			//	mTextSize = (int) a.getDimension(attr, TypedValue
+			//			.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10,
+			//					getResources().getDisplayMetrics()));
+			//	break;
 
 			}
 		}
 
 		a.recycle();
 
-		mTextPaint = new Paint();
-		mTextPaint.setTextSize(mTextSize);
-		mTextPaint.setColor(0xff555555);
+		//mTextPaint = new Paint();
+		//mTextPaint.setTextSize(mTextSize);
+		//mTextPaint.setColor(0xff555555);
 		// 得到text绘制范围
-		mTextPaint.getTextBounds(mText, 0, mText.length(), mTextBound);
+		//mTextPaint.getTextBounds(mText, 0, mText.length(), mTextBound);
 
 	}
 
@@ -122,8 +122,8 @@ public class ChangeColorIconWithTextView extends View {
 		int alpha = (int) Math.ceil((255 * mAlpha));
 		canvas.drawBitmap(mIconBitmap, null, mIconRect, null);
 		setupTargetBitmap(alpha);
-		drawSourceText(canvas, alpha);
-		drawTargetText(canvas, alpha);
+		//drawSourceText(canvas, alpha);
+		//drawTargetText(canvas, alpha);
 		canvas.drawBitmap(mBitmap, 0, 0, null);
 
 	}
@@ -142,7 +142,7 @@ public class ChangeColorIconWithTextView extends View {
 		mPaint.setAlpha(255);
 		mCanvas.drawBitmap(mIconBitmap, null, mIconRect, mPaint);
 	}
-
+/*
 	private void drawSourceText(Canvas canvas, int alpha) {
 		mTextPaint.setTextSize(mTextSize);
 		mTextPaint.setColor(0xff333333);
@@ -160,7 +160,7 @@ public class ChangeColorIconWithTextView extends View {
 				mIconRect.bottom + mTextBound.height(), mTextPaint);
 
 	}
-
+*/
 	public void setIconAlpha(float alpha) {
 		this.mAlpha = alpha;
 		invalidateView();
