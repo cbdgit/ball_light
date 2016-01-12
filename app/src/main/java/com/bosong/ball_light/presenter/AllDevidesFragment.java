@@ -4,6 +4,7 @@ import com.bosong.framework.presenter.FragmentPresenter;
 import com.bosong.ball_light.view.AllDevidesDelegate;
 import com.bosong.ball_light.R;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -14,8 +15,7 @@ import android.widget.Toast;
 public class AllDevidesFragment extends FragmentPresenter<AllDevidesDelegate> implements View.OnClickListener {
 
     public static AllDevidesFragment newInstance() {
-        AllDevidesFragment allDevidesFragment = new AllDevidesFragment();
-        return allDevidesFragment;
+         return new AllDevidesFragment();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class AllDevidesFragment extends FragmentPresenter<AllDevidesDelegate> im
     @Override
     protected void bindEventListener(){
         super.bindEventListener();
-        viewDelegate.setOnClickListener(this, R.id.text_view);
+        //viewDelegate.setOnClickListener(this, R.id.text_view);
     }
 
     @Override

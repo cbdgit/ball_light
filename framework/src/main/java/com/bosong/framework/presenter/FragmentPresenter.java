@@ -29,9 +29,15 @@ import com.bosong.framework.view.IDelegate;
 public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {
     public T viewDelegate;
 
+    private String mContent = "";
+    private static final String KEY_CONTENT = "Fragment:Content";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if((savedInstanceState != null) && savedInstanceState.containsKey(KEY_CONTENT)) {
+            mContent = savedInstanceState.getString(KEY_CONTENT);
+        }
         try {
             viewDelegate = getDelegateClass().newInstance();
         } catch (java.lang.InstantiationException e) {
@@ -39,6 +45,12 @@ public abstract class FragmentPresenter<T extends IDelegate> extends Fragment {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_CONTENT, mContent);
     }
 
     @Nullable
