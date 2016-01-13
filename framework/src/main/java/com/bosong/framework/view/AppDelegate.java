@@ -58,7 +58,7 @@ public abstract class AppDelegate implements IDelegate {
     @Override
     public void initWidget() {
     }
-/*
+
     public <T extends View> T bindView(int id) {
         T view = (T) mViews.get(id);
         if (view == null) {
@@ -71,7 +71,7 @@ public abstract class AppDelegate implements IDelegate {
     public <T extends View> T get(int id) {
         return (T) bindView(id);
     }
-
+/*
     public void setOnClickListener(View.OnClickListener listener, int... ids) {
         if (ids == null) {
             return;

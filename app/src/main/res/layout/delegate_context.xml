@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:columnCount="3"
+    >
 
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="yyyyyyyyyyyyyyyyyyyyyy"
+    <ImageView
+        android:id="@+id/image_home"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/home"
         />
-</LinearLayout>
+    <ImageView
+        android:id="@+id/image_outside"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/outside"
+        />
+    <ImageView
+        android:id="@+id/image_dinner"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dinner"
+        />
+    <ImageView
+        android:id="@+id/image_theatre"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/theatre"
+        />
+    <ImageView
+        android:id="@+id/image_bed"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bed"
+        />
+    <ImageView
+        android:id="@+id/image_sleep"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/sleep"
+        />
+    <ImageView
+        android:id="@+id/image_theatre"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/theatre"
+        />
+    <ImageView
+        android:id="@+id/image_birthday"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/birthday"
+        />
+    <ImageView
+        android:id="@+id/image_celebrate"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/celebrate"
+        />
+
+</GridLayout>
