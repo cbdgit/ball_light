@@ -2,6 +2,7 @@ package com.bosong.ball_light.view;
 
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bosong.ball_light.R;
 import com.bosong.framework.view.AppDelegate;
@@ -12,7 +13,8 @@ import com.bosong.framework.view.AppDelegate;
 public class ContextDelegate extends AppDelegate {
 
     private GridView memberListGV;
-    private ImageView delItem;
+    private TextView title_left;
+    private TextView title_right;
 
     @Override
     public int getRootLayoutId(){
@@ -22,17 +24,22 @@ public class ContextDelegate extends AppDelegate {
     @Override
     public void initWidget(){
         super.initWidget();
-        //TextView textView = get(R.id.text_view);
-        //textView.setText("只是测试");
+
+        title_left = get(R.id.title_left);
+        title_right = get(R.id.title_right);
+
         memberListGV = (GridView) get(R.id.gridview_context);
-        delItem = (ImageView) get(R.id.item_del);
     }
 
     public GridView getGridView(){;
         return memberListGV;
     }
 
-    public ImageView getDelItemView(){
-        return delItem;
+    public void setTitleLeft(String title_left) {
+        this.title_left.setText(title_left);
+    }
+
+    public void setTitleRight(String title_right) {
+        this.title_right.setText(title_right);
     }
 }

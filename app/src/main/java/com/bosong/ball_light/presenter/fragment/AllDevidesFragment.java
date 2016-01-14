@@ -1,5 +1,6 @@
 package com.bosong.ball_light.presenter.fragment;
 
+import com.bosong.ball_light.R;
 import com.bosong.framework.presenter.FragmentPresenter;
 import com.bosong.ball_light.view.AllDevidesDelegate;
 
@@ -24,7 +25,10 @@ public class AllDevidesFragment extends FragmentPresenter<AllDevidesDelegate> im
     @Override
     protected void bindEventListener(){
         super.bindEventListener();
-        //viewDelegate.setOnClickListener(this, R.id.text_view);
+        viewDelegate.setOnClickListener(this, R.id.title_left);
+        viewDelegate.setOnClickListener(this, R.id.title_right);
+        viewDelegate.setTitleLeft("选择");
+        viewDelegate.setTitleRight("设置");
     }
 
     @Override

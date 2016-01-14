@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Window;
 
 public class MainActivity extends ActivityPresenter<MainDelegate> {
 
@@ -30,6 +31,7 @@ public class MainActivity extends ActivityPresenter<MainDelegate> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         viewPager = viewDelegate.getViewPager();
         fadeTabIndicator = viewDelegate.getIndicator();
 

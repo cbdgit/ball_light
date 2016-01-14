@@ -8,6 +8,10 @@ import android.widget.TextView;
  * Created by mike on 1/11/16.
  */
 public class AllDevidesDelegate extends AppDelegate {
+
+    private TextView title_left;
+    private TextView title_right;
+
     @Override
     public int getRootLayoutId(){
         return R.layout.delegate_alldevides;
@@ -16,7 +20,16 @@ public class AllDevidesDelegate extends AppDelegate {
     @Override
     public void initWidget(){
         super.initWidget();
-        //TextView textView = get(R.id.text_view);
-        //textView.setText("只是测试");
+
+        title_left = get(R.id.title_left);
+        title_right = get(R.id.title_right);
+    }
+
+    public void setTitleLeft(String title_left) {
+        this.title_left.setText(title_left);
+    }
+
+    public void setTitleRight(String title_right) {
+        this.title_right.setText(title_right);
     }
 }

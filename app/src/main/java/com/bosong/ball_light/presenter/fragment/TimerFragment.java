@@ -3,6 +3,7 @@ package com.bosong.ball_light.presenter.fragment;
 /**
  * Created by mike on 1/11/16.
  */
+import com.bosong.ball_light.R;
 import com.bosong.ball_light.view.TimerDelegate;
 import com.bosong.framework.presenter.FragmentPresenter;
 
@@ -25,7 +26,10 @@ public class TimerFragment extends FragmentPresenter<TimerDelegate> implements V
     @Override
     protected void bindEventListener(){
         super.bindEventListener();
-        //viewDelegate.setOnClickListener(this, R.id.text_view);
+        viewDelegate.setOnClickListener(this, R.id.title_left);
+        viewDelegate.setOnClickListener(this, R.id.title_right);
+        viewDelegate.setTitleLeft("删除");
+        viewDelegate.setTitleRight("添加");
     }
 
     @Override

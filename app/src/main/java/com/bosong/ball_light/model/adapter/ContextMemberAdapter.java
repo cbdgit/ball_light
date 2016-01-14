@@ -8,8 +8,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -133,6 +135,17 @@ public class ContextMemberAdapter extends BaseAdapter {
 				public void onClick(View v) {
 					deleteItem(position);
 					refreshUI();
+				}
+			});
+
+			holder.del.setOnKeyListener(new OnKeyListener() {
+
+				@Override
+				public boolean onKey(View v, int keyCode, KeyEvent event) {
+					if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+						mMode = Mode.NORMAL;
+					}
+					return false;
 				}
 			});
 		}

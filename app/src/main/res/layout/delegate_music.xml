@@ -4,10 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include android:id="@+id/titlebar" layout="@layout/titlebar" />
+
     <LinearLayout
         android:id="@+id/layout_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/titlebar"
         android:orientation="horizontal"
         android:gravity="center"
         >

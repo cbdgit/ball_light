@@ -71,7 +71,7 @@ public abstract class AppDelegate implements IDelegate {
     public <T extends View> T get(int id) {
         return (T) bindView(id);
     }
-/*
+
     public void setOnClickListener(View.OnClickListener listener, int... ids) {
         if (ids == null) {
             return;
@@ -84,7 +84,7 @@ public abstract class AppDelegate implements IDelegate {
     public void toast(CharSequence msg) {
         Toast.makeText(rootView.getContext(), msg, Toast.LENGTH_SHORT).show();
     }
-*/
+
     public <T extends Activity> T getActivity() {
         return (T) rootView.getContext();
     }

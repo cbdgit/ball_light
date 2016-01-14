@@ -19,8 +19,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.Window;
 
 import com.bosong.framework.view.IDelegate;
+import com.bosong.framework.R;
 
 public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatActivity {
     protected T viewDelegate;
@@ -38,6 +40,7 @@ public abstract class ActivityPresenter<T extends IDelegate> extends AppCompatAc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         viewDelegate.create(getLayoutInflater(), null, savedInstanceState);
         setContentView(viewDelegate.getRootView());
         initToolbar();

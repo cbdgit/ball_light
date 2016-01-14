@@ -14,6 +14,10 @@ import com.bosong.framework.view.AppDelegate;
  */
 
 public class MusicDelegate extends AppDelegate {
+
+    private TextView title_left;
+    private TextView title_right;
+
     @Override
     public int getRootLayoutId(){
         return R.layout.delegate_music;
@@ -29,5 +33,16 @@ public class MusicDelegate extends AppDelegate {
     @Override
     public void initWidget(){
         super.initWidget();
+
+        title_left = get(R.id.title_left);
+        title_right = get(R.id.title_right);
+    }
+
+    public void setTitleLeft(String title_left) {
+        this.title_left.setText(title_left);
+    }
+
+    public void setTitleRight(String title_right) {
+        this.title_right.setText(title_right);
     }
 }
