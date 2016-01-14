@@ -16,7 +16,6 @@
         android:layout_marginTop="8.0dip"
         android:layout_marginBottom="8.0dip"
         android:padding="2.0dip"
-        android:background="@drawable/meeting_bg"
         android:scaleType="centerCrop"
         />
 
@@ -29,23 +28,8 @@
         <ImageView
             android:id="@+id/item_del"
             android:src="@drawable/appitem_del_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="right|top"
-        android:paddingRight="20.0dip"
-        android:paddingBottom="20.0dip"
-        android:orientation="vertical"
-        >
-        <ImageView
-            android:id="@+id/item_offline_state"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             />
     </LinearLayout>
 

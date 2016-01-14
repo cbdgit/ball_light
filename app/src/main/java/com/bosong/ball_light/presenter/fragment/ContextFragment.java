@@ -18,6 +18,8 @@ public class ContextFragment extends FragmentPresenter<ContextDelegate> implemen
     private GridView memberListGV;
     private ContextMemberAdapter contextMemberAdapter;
 
+    private int single = 1;
+
     public static ContextFragment newInstance() {
         ContextFragment contextFragment = new ContextFragment();
         return contextFragment;
@@ -44,7 +46,14 @@ public class ContextFragment extends FragmentPresenter<ContextDelegate> implemen
     public void onClick(View v){
         switch(v.getId()){
             case R.id.title_left:
-                Toast.makeText(viewDelegate.getRootView().getContext(), "点了删除", Toast.LENGTH_SHORT).show();
+                if (single % 2 == 1){
+                    contextMemberAdapter.setMode(false);
+                    viewDelegate.setTitleLeft("取消");
+                } else {
+                    contextMemberAdapter.setMode(true);
+                    viewDelegate.setTitleLeft("删除");
+                }
+                single++;
                 break;
             case R.id.title_right:
                 Toast.makeText(viewDelegate.getRootView().getContext(), "点了新建", Toast.LENGTH_SHORT).show();

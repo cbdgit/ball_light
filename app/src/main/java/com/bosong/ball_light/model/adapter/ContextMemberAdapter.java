@@ -70,8 +70,6 @@ public class ContextMemberAdapter extends BaseAdapter {
 			holder.del = (ImageView) convertView.findViewById(R.id.item_del);
 			holder.online = (ImageView) convertView
 					.findViewById(R.id.item_online_state);
-			holder.offline = (ImageView) convertView
-					.findViewById(R.id.item_offline_state);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -85,7 +83,6 @@ public class ContextMemberAdapter extends BaseAdapter {
 				}
 			});
 			holder.online.setVisibility(View.GONE);
-			holder.offline.setVisibility(View.GONE);
 			holder.del.setVisibility(View.GONE);
 		} else if (position == mList.size() + 1) {
 			holder.icon.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +97,6 @@ public class ContextMemberAdapter extends BaseAdapter {
 				}
 			});
 			holder.online.setVisibility(View.GONE);
-			holder.offline.setVisibility(View.GONE);
 			holder.del.setVisibility(View.GONE);
 		} else {
 			holder.icon.setImageResource(mList.get(position).getIconId());
@@ -113,21 +109,16 @@ public class ContextMemberAdapter extends BaseAdapter {
 				}
 			});
 			int resOnlineId = 0;
-			int resOfflineId = 0;
 			if (mList.get(position).isOnline()) {
 				resOnlineId = R.drawable.member_online;
-				resOfflineId = R.drawable.member_offline;
 			}
 			holder.online.setVisibility(View.VISIBLE);
-			holder.offline.setVisibility(View.VISIBLE);
 			holder.online.setImageResource(resOnlineId);
-			holder.offline.setImageResource(resOfflineId);
 			if (mMode == Mode.NORMAL) {
 				holder.del.setVisibility(View.GONE);
 			} else {
 				holder.del.setVisibility(View.VISIBLE);
 				holder.online.setVisibility(View.GONE);
-				holder.offline.setVisibility(View.GONE);
 			}
 
 			holder.del.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +146,15 @@ public class ContextMemberAdapter extends BaseAdapter {
 
 	public void refreshUI() {
 		notifyDataSetChanged();
+	}
+
+	public void setMode(boolean b) {
+		if (b == false){
+			mMode = Mode.DEL;
+		} else if (b == true) {
+			mMode = Mode.NORMAL;
+		}
+		refreshUI();
 	}
 
 	public void addItem(ContextMemberBean contextMemberBean){
