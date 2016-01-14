@@ -1,21 +1,21 @@
-package com.bosong.ball_light.presenter;
+package com.bosong.ball_light.presenter.fragment;
 
 /**
  * Created by mike on 1/11/16.
  */
-import com.bosong.ball_light.R;
+import com.bosong.ball_light.model.adapter.ContextMemberAdapter;
 import com.bosong.ball_light.view.ContextDelegate;
 import com.bosong.framework.presenter.FragmentPresenter;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.Toast;
 
 
 public class ContextFragment extends FragmentPresenter<ContextDelegate> implements View.OnClickListener  {
+
+    private GridView memberListGV;
+    private ContextMemberAdapter contextMemberAdapter;
 
     public static ContextFragment newInstance() {
         ContextFragment contextFragment = new ContextFragment();
@@ -31,10 +31,12 @@ public class ContextFragment extends FragmentPresenter<ContextDelegate> implemen
     protected void bindEventListener(){
         super.bindEventListener();
         //viewDelegate.setOnClickListener(this, R.id.text_view);
+        memberListGV = viewDelegate.getGridView();
+        contextMemberAdapter = new ContextMemberAdapter(viewDelegate.getRootView().getContext());
+        memberListGV.setAdapter(contextMemberAdapter);
     }
 
     @Override
     public void onClick(View v){
-        Toast.makeText(getActivity(), "点了TextView", Toast.LENGTH_SHORT).show();
     }
 }

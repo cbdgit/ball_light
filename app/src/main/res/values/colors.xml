@@ -279,10 +279,10 @@
     <color name="bluegrey800">#37474f</color>
     <color name="bluegrey900">#263238</color>
 
-    <color name="colorAccent">@color/green800</color>
-    <color name="colorPrimary">@color/green800</color>
-    <color name="colorPrimaryDark">@color/green900</color>
-    <color name="statusBarColor">@color/green900</color>
+    <color name="colorAccent">@color/blue400</color>
+    <color name="colorPrimary">@color/blue600</color>
+    <color name="colorPrimaryDark">@color/blue800</color>
+    <color name="statusBarColor">@color/blue900</color>
     <color name="navigationBarColor">@android:color/black</color>
     <color name="drawerArrowColor">@android:color/white</color>
 

@@ -1,11 +1,9 @@
-package com.bosong.ball_light.presenter;
+package com.bosong.ball_light.presenter.fragment;
 
 import com.bosong.framework.presenter.FragmentPresenter;
 import com.bosong.ball_light.view.AllDevidesDelegate;
-import com.bosong.ball_light.R;
 
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 /**

@@ -1,16 +1,9 @@
-package com.bosong.ball_light.presenter;
+package com.bosong.ball_light.presenter.fragment;
 
-import com.bosong.ball_light.R;
 import com.bosong.ball_light.view.MusicDelegate;
 import com.bosong.framework.presenter.FragmentPresenter;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 public class MusicFragment extends FragmentPresenter<MusicDelegate> implements View.OnClickListener {

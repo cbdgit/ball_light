@@ -8,6 +8,8 @@
     <string name="tab3_text">Discover</string>
     <string name="tab4_text">Me</string>
 
+    <string name="toast">长按以上图标修改情景属性</string>
+
 
     <string name="popular">流行</string>
     <string name="gentle">柔和</string>

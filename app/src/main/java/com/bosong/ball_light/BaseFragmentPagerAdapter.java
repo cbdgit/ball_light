@@ -1,9 +1,9 @@
 package com.bosong.ball_light;
 
-import com.bosong.ball_light.presenter.AllDevidesFragment;
-import com.bosong.ball_light.presenter.ContextFragment;
-import com.bosong.ball_light.presenter.TimerFragment;
-import com.bosong.ball_light.presenter.MusicFragment;
+import com.bosong.ball_light.presenter.fragment.AllDevidesFragment;
+import com.bosong.ball_light.presenter.fragment.ContextFragment;
+import com.bosong.ball_light.presenter.fragment.TimerFragment;
+import com.bosong.ball_light.presenter.fragment.MusicFragment;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
