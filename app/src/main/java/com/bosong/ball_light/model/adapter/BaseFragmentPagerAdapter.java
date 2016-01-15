@@ -1,5 +1,6 @@
-package com.bosong.ball_light;
+package com.bosong.ball_light.model.adapter;
 
+import com.bosong.ball_light.R;
 import com.bosong.ball_light.presenter.fragment.AllDevidesFragment;
 import com.bosong.ball_light.presenter.fragment.ContextFragment;
 import com.bosong.ball_light.presenter.fragment.TimerFragment;

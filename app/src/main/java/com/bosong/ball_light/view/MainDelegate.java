@@ -1,13 +1,10 @@
 package com.bosong.ball_light.view;
 
-import com.bosong.ball_light.BaseFragmentPagerAdapter;
-import com.bosong.ball_light.FadeTabIndicator;
+import com.bosong.ball_light.presenter.activity.FadeTabIndicator;
 import com.bosong.ball_light.R;
 
 import com.bosong.framework.view.AppDelegate;
 
-import android.content.Context;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;

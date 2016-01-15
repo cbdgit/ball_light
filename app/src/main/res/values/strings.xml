@@ -8,9 +8,17 @@
     <string name="tab3_text">Discover</string>
     <string name="tab4_text">Me</string>
 
+    <!-- Context delegate -->
     <string name="toast">长按以上图标修改情景属性</string>
 
+    <string name="popwindow_title">自定义情景</string>
+    <string name="popwindow_hint_one">请输入情景的名称：</string>
+    <string name="popwindow_hint_two">为你的情景配上一张漂亮的图片：</string>
+    <string name="popwindow_hint_thr">（可选项）</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
 
+    <!-- Music delegate -->
     <string name="popular">流行</string>
     <string name="gentle">柔和</string>
     <string name="rock">摇滚</string>
@@ -20,4 +28,6 @@
 
     <string name="color_slt">色彩</string>
     <string name="music_lib">乐库</string>
+
+
 </resources>

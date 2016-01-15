@@ -1,6 +1,7 @@
 package com.bosong.ball_light.model.adapter;
 
 import com.bosong.ball_light.R;
+import com.bosong.ball_light.presenter.activity.ContextEditActivity;
 import com.bosong.ball_light.model.bean.ContextMemberBean;
 import com.bosong.ball_light.util.LogUtil;
 
@@ -8,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.ImageView;
 public class ContextMemberAdapter extends BaseAdapter {
 	private List<ContextMemberBean> mList = new LinkedList<ContextMemberBean>();
 	private LayoutInflater inflater;
+	private Context mContext;
 
 	private enum Mode {
 		DEL, NORMAL
@@ -26,21 +29,10 @@ public class ContextMemberAdapter extends BaseAdapter {
 
 	private Mode mMode = Mode.NORMAL;
 
-	public ContextMemberAdapter(Context mContext) {
+	public ContextMemberAdapter(Context mContext, List<ContextMemberBean> mList) {
 		inflater = LayoutInflater.from(mContext);
-		initList();
-	}
-
-	private void initList() {
-		mList.add(new ContextMemberBean(R.drawable.home, true));
-		mList.add(new ContextMemberBean(R.drawable.outside, false));
-		mList.add(new ContextMemberBean(R.drawable.dinner, false));
-		mList.add(new ContextMemberBean(R.drawable.theatre, false));
-		mList.add(new ContextMemberBean(R.drawable.bed, false));
-		mList.add(new ContextMemberBean(R.drawable.sleep, false));
-		mList.add(new ContextMemberBean(R.drawable.party, false));
-		mList.add(new ContextMemberBean(R.drawable.birthday, false));
-		mList.add(new ContextMemberBean(R.drawable.celebrate, false));
+		this.mContext = mContext;
+		this.mList = mList;
 	}
 
 	@Override
@@ -79,7 +71,6 @@ public class ContextMemberAdapter extends BaseAdapter {
 			holder.icon.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-
 				}
 			});
 			holder.online.setVisibility(View.GONE);
@@ -100,11 +91,25 @@ public class ContextMemberAdapter extends BaseAdapter {
 			holder.del.setVisibility(View.GONE);
 		} else {
 			holder.icon.setImageResource(mList.get(position).getIconId());
+			holder.icon.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (mList.get(position).isOnline()) {
+						mList.get(position).setOnline(false);
+					} else {
+						for (int i = 0; i < mList.size(); i++) {
+							mList.get(i).setOnline(false);
+						}
+						mList.get(position).setOnline(true);
+					}
+					refreshUI();
+				}
+			});
 			holder.icon.setOnLongClickListener(new View.OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View v) {
-					mMode = Mode.DEL;
-					refreshUI();
+					Intent intent = new Intent(mContext, ContextEditActivity.class);
+					mContext.startActivity(intent);
 					return true;
 				}
 			});
@@ -170,6 +175,5 @@ public class ContextMemberAdapter extends BaseAdapter {
 		ImageView icon;
 		ImageView del;
 		ImageView online;
-		ImageView offline;
 	}
 }

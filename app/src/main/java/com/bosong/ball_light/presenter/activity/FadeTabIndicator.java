@@ -1,5 +1,5 @@
 
-package com.bosong.ball_light;
+package com.bosong.ball_light.presenter.activity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bosong.ball_light.R;
 
 public class FadeTabIndicator extends LinearLayout {
     private ViewPager mViewPager;

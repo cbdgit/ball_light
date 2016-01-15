@@ -1,22 +1,16 @@
 
-package com.bosong.ball_light;
+package com.bosong.ball_light.presenter.activity;
 
-import com.bosong.ball_light.FadeTabIndicator.FadingTab;
-import com.bosong.ball_light.view.AllDevidesDelegate;
+import com.bosong.ball_light.R;
+import com.bosong.ball_light.model.adapter.BaseFragmentPagerAdapter;
 import com.bosong.ball_light.view.MainDelegate;
 
 import com.bosong.framework.presenter.ActivityPresenter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Window;
 
 public class MainActivity extends ActivityPresenter<MainDelegate> {
 
