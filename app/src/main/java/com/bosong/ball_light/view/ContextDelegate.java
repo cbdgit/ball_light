@@ -46,6 +46,7 @@ public class ContextDelegate extends AppDelegate {
         mPopupWindow.setTouchable(true);
         mPopupWindow.setOutsideTouchable(true);
         mPopupWindow.setBackgroundDrawable(new BitmapDrawable(getRootView().getContext().getResources(), (Bitmap) null));
+
     }
 
     public GridView getGridView(){;
